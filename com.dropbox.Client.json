@@ -4,7 +4,6 @@
     "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox-app",
-    "homepage": "https://www.dropbox.com",
     "cleanup": [
         "/lib/debug"
     ],
