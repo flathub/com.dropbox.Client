@@ -57,14 +57,14 @@
 
   <screenshots>
     <screenshot>
-      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot1.jpg</image>
-      <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot1.jpg</image>
-      <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot1.jpg</image>
+      <image type="source" xml:lang="pt_BR">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot1.jpg</p></image>
+      <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot1.jpg</p></image>
+      <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot1.jpg</p></image>
     </screenshot>
     <screenshot>
-      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot2.jpg</image>
-      <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot2.jpg</image>
-      <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot2.jpg</image>
+      <image type="source" xml:lang="pt_BR">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot2.jpg</p></image>
+      <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot2.jpg</p></image>
+      <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot2.jpg</p></image>
     </screenshot>
   </screenshots>
 
