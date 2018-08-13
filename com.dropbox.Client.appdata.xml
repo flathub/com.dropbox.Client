@@ -2,7 +2,7 @@
 <component type="desktop">
   <id>com.dropbox.Client.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>Proprietary</project_license>
+  <project_license>LicenseRef-proprietary</project_license>
 
   <categories>
     <category>Utility</category>
