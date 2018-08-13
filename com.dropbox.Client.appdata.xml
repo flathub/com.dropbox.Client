@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>com.dropbox.Client.desktop</id>
-  <metadata_license>CC0</metadata_license>
-  <project_license>GPL-3.0+</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Proprietary</project_license>
 
   <categories>
     <category>Utility</category>
@@ -57,14 +57,14 @@
 
   <screenshots>
     <screenshot>
-      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot1.jpg</image>
       <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot1.jpg</image>
       <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot1.jpg</image>
+      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot1.jpg</image>
     </screenshot>
     <screenshot>
-      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot2.jpg</image>
       <image type="source">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/C/com.dropbox.client-screenshot2.jpg</image>
       <image type="source" xml:lang="es">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/es/com.dropbox.client-screenshot2.jpg</image>
+      <image type="source" xml:lang="pt">https://d3lapyynmdp1i9.cloudfront.net/screenshots/com.dropbox.Client/pt/com.dropbox.client-screenshot2.jpg</image>
     </screenshot>
   </screenshots>
 
