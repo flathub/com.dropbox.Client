@@ -204,7 +204,7 @@ class DropboxLauncher():
             Gio.AppInfo.launch_default_for_uri("file://{}".format(path))
             logging.info("Dropbox directory opened at {}...".format(directory))
         except GLib.GError as e:
-            logging.error("Could not open path at {}: {}".format(self._path, e.message))
+            logging.error("Could not open path at {}: {}".format(path, e.message))
             return
 
     def _launch_dropbox(self):
@@ -250,7 +250,7 @@ class DropboxLauncher():
         while True:
             daemon = find_dropbox_daemon()
             if daemon:
-                logging.info("A Dropbox daemon still running (PID: {)). Waiting for it to finish..."
+                logging.info("A Dropbox daemon still running (PID: {}). Waiting for it to finish..."
                              .format(daemon.pid))
                 daemon.wait()
             else:
