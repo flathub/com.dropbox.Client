@@ -210,7 +210,7 @@ class DropboxLauncher():
     def _launch_dropbox(self):
         self._disable_auto_updates()
 
-        if os.path.exists(os.path.expanduser(DROPBOX_CONFIG)):
+        if os.path.exists(os.path.expanduser(DROPBOX_CONFIG)) and not parsed_args.silent :
             self._open_dropbox_directory()
 
         self._launch_dropbox_daemon()
@@ -284,6 +284,7 @@ class DropboxLauncher():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', dest='debug', action='store_true')
+    parser.add_argument('--silent', dest='silent', action='store_true')
 
     parsed_args = parser.parse_args()
     if parsed_args.debug:
