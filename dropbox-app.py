@@ -285,7 +285,8 @@ class DropboxLauncher():
         self._open_dropbox_directory()
         self._dir_monitor.cancel()
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', dest='debug', action='store_true')
 
@@ -295,3 +296,6 @@ if __name__ == '__main__':
 
     is_autostarted = 'DESKTOP_AUTOSTART_ID' in os.environ
     DropboxLauncher(silent=is_autostarted).run()
+
+if __name__ == '__main__':
+    main()
