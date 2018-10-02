@@ -16,6 +16,21 @@
     ],
     "modules": [
         {
+            "name": "python3-psutil",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/giampaolo/psutil/archive/release-5.4.5.tar.gz",
+                    "sha256": "5bf25eff39ba5ba1d00dc94d114012d11b7a6ace62d98943897097d117e0a3f6"
+                }
+            ],
+            "build-commands": [
+                "python3 setup.py build",
+                "python3 setup.py install --prefix /app"
+            ]
+        },
+        {
             "name": "dropbox-app",
             "buildsystem": "simple",
             "sources": [
@@ -71,21 +86,6 @@
                 "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop",
 
                 "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 dropbox_${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
-            ]
-        },
-        {
-            "name": "python3-psutil",
-            "buildsystem": "simple",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-5.4.5.tar.gz",
-                    "sha256": "5bf25eff39ba5ba1d00dc94d114012d11b7a6ace62d98943897097d117e0a3f6"
-                }
-            ],
-            "build-commands": [
-                "python3 setup.py build",
-                "python3 setup.py install --prefix /app"
             ]
         },
         {

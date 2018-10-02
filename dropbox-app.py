@@ -123,14 +123,14 @@ def get_dropbox_directory():
 
 
 class DropboxLauncher():
-
-    def __init__(self):
+    def __init__(self, silent):
         self._mainloop = GLib.MainLoop()
         self._config_monitor = None
         self._dir_monitor = None
         self._bus_owner_id = 0
         self._quit_if_name_lost = False
         self._launcher = None
+        self._silent = silent
 
     def run(self):
         self._try_own_bus_name()
@@ -189,6 +189,10 @@ class DropboxLauncher():
         sys.exit(retcode)
 
     def _open_dropbox_directory(self):
+        if self._silent:
+            logging.info("Autostarted; not opening Dropbox directory")
+            return
+
         directory = get_dropbox_directory()
         logging.info("Attempting to open Dropbox directory at {}...".format(directory))
 
@@ -281,7 +285,8 @@ class DropboxLauncher():
         self._open_dropbox_directory()
         self._dir_monitor.cancel()
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', dest='debug', action='store_true')
 
@@ -289,4 +294,8 @@ if __name__ == '__main__':
     if parsed_args.debug:
         logging.basicConfig(level=logging.INFO)
 
-    DropboxLauncher().run()
+    is_autostarted = 'DESKTOP_AUTOSTART_ID' in os.environ
+    DropboxLauncher(silent=is_autostarted).run()
+
+if __name__ == '__main__':
+    main()
