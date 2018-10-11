@@ -14,14 +14,7 @@
         "--filesystem=home",
         "--filesystem=/tmp",
 	/* StatusNotifierItem support */
-	"--talk-name=org.kde.StatusNotifierWatcher",
-	"--own-name=org.kde.StatusNotifierItem-7-1"
-        /* Note: the number 7 above is the PID of the dropboxd process
-         * when launched using the default command of this flatpak. It
-         * must be reviewed with every update. If the bus name
-         * org.kde.StatusNotifierItem-7-1 is already owned by another
-         * process, dropboxd will fail to show an indicator but it
-         * will not fall back to the XEMBED systray. */
+	"--own-name=org.kde.*"
     ],
     "modules": [
         {
