@@ -14,9 +14,16 @@
         "--filesystem=home",
         "--filesystem=/tmp",
 	/* StatusNotifierItem support */
-	"--own-name=org.kde.*"
+	"--talk-name=org.kde.StatusNotifierWatcher",
+	/* Notification support */
+	"--talk-name=org.freedesktop.Notifications",
+	/* Accessibility */
+	"--talk-name=org.a11y.Bus",
+	/* GVFS */
+	"--talk-name=org.gtk.vfs.Daemon"
     ],
     "modules": [
+        "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         {
             "name": "python3-psutil",
             "buildsystem": "simple",
