@@ -1,12 +1,10 @@
 {
     "app-id": "com.dropbox.Client",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "3.28",
-    "sdk": "org.gnome.Sdk",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "18.08",
+    "sdk": "org.freedesktop.Sdk",
+    "tags": ["proprietary"],
     "command": "dropbox-app",
-    "cleanup": [
-        "/lib/debug"
-    ],
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -77,12 +75,9 @@
                 }
             ],
             "build-commands": [
-                "install -d /app/bin",
-                "install dropbox-app.py /app/bin/dropbox-app",
-                "install -d /app/share/appdata",
-                "install -m644 com.dropbox.Client.appdata.xml /app/share/appdata/com.dropbox.Client.appdata.xml",
-                "install -d /app/share/applications",
-                "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop",
+                "install -D dropbox-app.py /app/bin/dropbox-app",
+                "install -Dm644 com.dropbox.Client.appdata.xml -t /app/share/metainfo",
+                "install -Dm644 com.dropbox.Client.desktop -t /app/share/applications",
                 "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 dropbox_${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
             ]
         },
