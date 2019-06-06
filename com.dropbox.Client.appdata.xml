@@ -62,10 +62,10 @@
 
   <screenshots>
     <screenshot>
-      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/update-metadata/screenshots/C/login-page.png</image>
+      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/login-page.png</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/update-metadata/screenshots/C/nautilus.png</image>
+      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/nautilus.png</image>
     </screenshot>
   </screenshots>
 
