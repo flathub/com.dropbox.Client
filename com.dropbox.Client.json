@@ -13,7 +13,10 @@
         "--socket=pulseaudio",
         "--share=network",
         "--filesystem=home",
-        "--filesystem=/tmp"
+        "--filesystem=/tmp",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--own-name=org.kde.*"
     ],
     "modules": [
         {
