@@ -112,7 +112,7 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "tar xf dropbox.tar.gz",
+                        "tar -xf --no-same-owner --no-same-permissions dropbox.tar.gz",
                         "rm -f dropbox.tar.gz",
                         "chmod a+xr ."
                     ]
