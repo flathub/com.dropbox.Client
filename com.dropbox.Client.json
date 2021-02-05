@@ -108,6 +108,7 @@
                     "sha256": "197c080bd67399c57b9c3a8deefdc4c4e74851324cf7d52d4d668fb45cebb545",
                     "size": 103671827,
                     "x-checker-data": {
+                        "is-main-source": true,
                         "type": "html",
                         "url": "https://www.dropboxforum.com/t5/forums/filteredbylabelpage/board-id/101003016/label-name/stable%20build",
                         "version-pattern": "Stable Build (\\d+.\\d+.\\d+)",
