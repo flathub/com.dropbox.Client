@@ -26,7 +26,12 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/giampaolo/psutil/archive/release-5.4.5.tar.gz",
-                    "sha256": "5bf25eff39ba5ba1d00dc94d114012d11b7a6ace62d98943897097d117e0a3f6"
+                    "sha256": "5bf25eff39ba5ba1d00dc94d114012d11b7a6ace62d98943897097d117e0a3f6",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3978,
+                        "url-template": "https://github.com/giampaolo/psutil/archive/release-$version.tar.gz"
+                    }
                 }
             ],
             "build-commands": [
