@@ -58,6 +58,7 @@
   <description><p>Need to safely store all of your important documents, photos, songs, and files? Easy! With this app you can use the internet to save everything that’s important to you. You can then access those files from any computer that has an internet connection. Use this service to backup your files, share photos or collaborate on a project by sharing a Dropbox folder with whomever you’d like. Create a free account and start saving and sharing today!  ** Requires internet.</p><p>NOTE: This wrapper is not verified by, affiliated with, or supported by Dropbox, Inc.</p></description>
 
   <releases>
+    <release version="116.4.368" date="2021-02-14"/>
     <release version="115.4.601" date="2021-02-03"/>
     <release version="113.4.507" date="2021-01-14"/>
     <release version="112.4.321" date="2020-12-15"/>
