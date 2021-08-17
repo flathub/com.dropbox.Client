@@ -40,6 +40,27 @@
             ]
         },
         {
+            "//": "Just for the icons",
+            "name": "nautilus-dropbox",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://linux.dropbox.com/packages/nautilus-dropbox-2020.03.04.tar.bz2",
+                    "sha256": "f3704103e8c646ec48cd9daf9af2183c6b492c59edf93d8768c14861cb404cca",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://linux.dropbox.com/packages/",
+                        "version-pattern": "<a href=\"nautilus-dropbox-(2020.03.04).tar.bz2\">",
+                        "url-template": "https://linux.dropbox.com/packages/nautilus-dropbox-$version.tar.bz2"
+                    }
+                }
+            ],
+            "build-commands": [
+                "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 data/icons/hicolor/${icon_size}x${icon_size}/apps/dropbox.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
+            ]
+        },
+        {
             "name": "dropbox-app",
             "buildsystem": "simple",
             "sources": [
@@ -54,34 +75,6 @@
                 {
                     "type": "file",
                     "path": "com.dropbox.Client.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_16.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_22.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_24.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_32.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_48.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_64.png"
-                },
-                {
-                    "type": "file",
-                    "path": "dropbox_256.png"
                 }
             ],
             "build-commands": [
@@ -90,8 +83,7 @@
                 "install -d /app/share/appdata",
                 "install -m644 com.dropbox.Client.appdata.xml /app/share/appdata/com.dropbox.Client.appdata.xml",
                 "install -d /app/share/applications",
-                "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop",
-                "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 dropbox_${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
+                "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop"
             ]
         },
         {
