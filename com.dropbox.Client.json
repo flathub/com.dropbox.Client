@@ -1,7 +1,7 @@
 {
     "app-id": "com.dropbox.Client",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "40",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox-app",
     "cleanup": [
@@ -96,9 +96,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-129.4.3571.tar.gz",
-                    "sha256": "348d039a1b07b0b14e145753771386b946d4c64c7521c102f98f73d4bc0a6a1d",
-                    "size": 101068889,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-130.4.4978.tar.gz",
+                    "sha256": "d46e3aebc85c567bd0069dec04978bd28a4eca60dbf1433f38ef5d35406fecc5",
+                    "size": 101155639,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
