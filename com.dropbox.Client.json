@@ -4,9 +4,6 @@
     "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox-app",
-    "cleanup": [
-        "/lib/debug"
-    ],
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
