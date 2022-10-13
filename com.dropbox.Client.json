@@ -34,6 +34,14 @@
             "build-commands": [
                 "python3 setup.py build",
                 "python3 setup.py install --prefix /app"
+            ],
+            "cleanup": [
+                "tests",
+                "_psaix.*",
+                "_psbsd.*",
+                "_psosx.*",
+                "_pssunos.*",
+                "_pswindows.*"
             ]
         },
         {
