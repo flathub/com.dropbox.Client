@@ -50,14 +50,15 @@
             "buildsystem": "simple",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://linux.dropbox.com/packages/nautilus-dropbox-2020.03.04.tar.bz2",
-                    "sha256": "f3704103e8c646ec48cd9daf9af2183c6b492c59edf93d8768c14861cb404cca",
+                    "type": "git",
+                    "url": "https://github.com/dropbox/nautilus-dropbox.git",
+                    "commit": "dcc280e4b872d787b607439f5120e58c50b6d290",
+                    "tag": "v2020.03.04",
                     "x-checker-data": {
-                        "type": "html",
-                        "url": "https://linux.dropbox.com/packages/",
-                        "version-pattern": "<a href=\"nautilus-dropbox-(2020.03.04).tar.bz2\">",
-                        "url-template": "https://linux.dropbox.com/packages/nautilus-dropbox-$version.tar.bz2"
+                        "type": "json",
+                        "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
+                        "tag-query": ".[0].name",
+                        "version-query": "$tag | sub(\"^v\"; \"\")"
                     }
                 }
             ],
@@ -101,9 +102,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-161.4.4923.tar.gz",
-                    "sha256": "88277cd9b4e229cd146ba3da0b99dfd08c1ca2bbd2541bb8827cf4a7d815ea1b",
-                    "size": 109934859,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-162.4.5419.tar.gz",
+                    "sha256": "87b8877273fe355cfeee3e71dded0a68d01a59cf28248e9b3708059819939749",
+                    "size": 110259777,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
