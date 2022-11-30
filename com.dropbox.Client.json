@@ -50,14 +50,15 @@
             "buildsystem": "simple",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://linux.dropbox.com/packages/nautilus-dropbox-2020.03.04.tar.bz2",
-                    "sha256": "f3704103e8c646ec48cd9daf9af2183c6b492c59edf93d8768c14861cb404cca",
+                    "type": "git",
+                    "url": "https://github.com/dropbox/nautilus-dropbox.git",
+                    "commit": "dcc280e4b872d787b607439f5120e58c50b6d290",
+                    "tag": "v2020.03.04",
                     "x-checker-data": {
-                        "type": "html",
-                        "url": "https://linux.dropbox.com/packages/",
-                        "version-pattern": "<a href=\"nautilus-dropbox-(2020.03.04).tar.bz2\">",
-                        "url-template": "https://linux.dropbox.com/packages/nautilus-dropbox-$version.tar.bz2"
+                        "type": "json",
+                        "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
+                        "tag-query": ".[0].name",
+                        "version-query": "$tag | sub(\"^v\"; \"\")"
                     }
                 }
             ],
