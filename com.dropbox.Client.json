@@ -22,8 +22,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.5.tar.gz",
-                    "sha256": "fba07e5d76e129ee1a374ea911e9bfc4161636260e33d055abb2b426ed182429",
+                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.6.tar.gz",
+                    "sha256": "fa32d61835811b6ce9990030caba08fb14bd8635b00fd774184c18d82b6ec78f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 3978,
@@ -102,9 +102,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-182.4.6427.tar.gz",
-                    "sha256": "ef2a145ae3daf58677c88de19f81619d06a075582023c505bb5fbc2e28cb9bb9",
-                    "size": 114508859,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-185.4.6054.tar.gz",
+                    "sha256": "8f4e7907cfb5ed5aff62ccdc80f2ff76816c6afd97fe2cc2515d13aca85bb253",
+                    "size": 114626942,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
