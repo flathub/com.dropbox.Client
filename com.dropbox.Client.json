@@ -76,7 +76,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.dropbox.Client.appdata.xml"
+                    "path": "com.dropbox.Client.metainfo.xml"
                 },
                 {
                     "type": "file",
@@ -86,8 +86,8 @@
             "build-commands": [
                 "install -d /app/bin",
                 "install dropbox-app.py /app/bin/dropbox-app",
-                "install -d /app/share/appdata",
-                "install -m644 com.dropbox.Client.appdata.xml /app/share/appdata/com.dropbox.Client.appdata.xml",
+                "install -d /app/share/metainfo",
+                "install -m644 com.dropbox.Client.metainfo.xml /app/share/metainfo/com.dropbox.Client.metainfo.xml",
                 "install -d /app/share/applications",
                 "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop"
             ]
