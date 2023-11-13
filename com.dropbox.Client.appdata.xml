@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017–2019 Endless Mobile, Inc. -->
-<component type="desktop">
+<component type="desktop-application">
   <id>com.dropbox.Client.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
