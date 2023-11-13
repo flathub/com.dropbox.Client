@@ -188,9 +188,11 @@
 
   <screenshots>
     <screenshot type="default">
+      <caption>The Dropbox login page</caption>
       <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/login-page.png</image>
     </screenshot>
     <screenshot>
+      <caption>A Dropbox folder displayed in a file manager</caption>
       <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/nautilus.png</image>
     </screenshot>
   </screenshots>
