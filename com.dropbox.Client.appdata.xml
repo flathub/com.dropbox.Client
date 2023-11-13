@@ -205,4 +205,6 @@
   </content_rating>
 
   <url type="homepage">https://www.dropbox.com</url>
+
+  <launchable type="desktop-id">com.dropbox.Client.desktop</launchable>
 </component>
