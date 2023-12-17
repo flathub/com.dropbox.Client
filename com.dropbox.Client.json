@@ -22,8 +22,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.6.tar.gz",
-                    "sha256": "fa32d61835811b6ce9990030caba08fb14bd8635b00fd774184c18d82b6ec78f",
+                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.7.tar.gz",
+                    "sha256": "2af131e80aafc0694c4f2ab3215f0fca6e39bdf94ca5a88c50e5843a0078f3c6",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 3978,
