@@ -52,8 +52,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dropbox/nautilus-dropbox.git",
-                    "commit": "dcc280e4b872d787b607439f5120e58c50b6d290",
-                    "tag": "v2020.03.04",
+                    "commit": "89b9a4bfe07007749b6ef5fbfcd68272516390f9",
+                    "tag": "v2023.09.06",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
