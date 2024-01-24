@@ -22,8 +22,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.7.tar.gz",
-                    "sha256": "2af131e80aafc0694c4f2ab3215f0fca6e39bdf94ca5a88c50e5843a0078f3c6",
+                    "url": "https://github.com/giampaolo/psutil/archive/release-5.9.8.tar.gz",
+                    "sha256": "962fbb077209fda6416046b704b51ed17a61edde41a4573886640026e2c53bae",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 3978,
@@ -52,8 +52,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dropbox/nautilus-dropbox.git",
-                    "commit": "89b9a4bfe07007749b6ef5fbfcd68272516390f9",
-                    "tag": "v2023.09.06",
+                    "commit": "a7e132a56fec9d7f48ee25788fba5e45c0e0b0fc",
+                    "tag": "v2024.01.22",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
@@ -102,9 +102,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-190.4.6383.tar.gz",
-                    "sha256": "333974775fda6e6834aea9c94bf07a86d928eebfda86c1e3f49c3085a2b3c80b",
-                    "size": 115387950,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-191.4.4995.tar.gz",
+                    "sha256": "3abfdf01c61102e364c9738fb705dc5304c89e1fbb98a7b0ca1dc871f490e336",
+                    "size": 115356260,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
