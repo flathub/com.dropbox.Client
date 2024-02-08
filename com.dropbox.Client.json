@@ -102,9 +102,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-191.4.4995.tar.gz",
-                    "sha256": "3abfdf01c61102e364c9738fb705dc5304c89e1fbb98a7b0ca1dc871f490e336",
-                    "size": 115356260,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-192.4.4605.tar.gz",
+                    "sha256": "baba6e13f0a2c52aa167a8f5ddc992c31b9a1a7a64da88981e48d26f6f5722d5",
+                    "size": 115368740,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
