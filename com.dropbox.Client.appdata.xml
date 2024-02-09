@@ -24,6 +24,10 @@
   <name xml:lang="zh_CN">Dropbox</name>
   <name xml:lang="zh_TW">Dropbox</name>
   <name>Dropbox</name>
+  <developer_name translate="no">Dropbox</developer_name>
+  <developer id="dropbox.com">
+    <name translate="no">Dropbox</name>
+  </developer>
 
   <summary xml:lang="ar">الوصول إلى ملفاتك من أي كمبيوتر</summary>
   <summary xml:lang="bn">যে কোন কম্পিউটার থেকে আপনার ফাইলসমূহে প্রবেশ করুন</summary>
