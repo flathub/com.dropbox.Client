@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017–2019 Endless Mobile, Inc. -->
+<component type="desktop-application">
+  <id>com.dropbox.Client.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <categories>
+    <category>Utility</category>
+    <category>Office</category>
+  </categories>
+
+  <name xml:lang="ar">Dropbox</name>
+  <name xml:lang="bn">ড্রপবক্স</name>
+  <name xml:lang="de">Dropbox</name>
+  <name xml:lang="es">Dropbox</name>
+  <name xml:lang="fr">Dropbox</name>
+  <name xml:lang="hi">ड्रॉपबॉक्स</name>
+  <name xml:lang="id">Dropbox</name>
+  <name xml:lang="pt_BR">Dropbox</name>
+  <name xml:lang="ro">Dropbox</name>
+  <name xml:lang="th">Dropbox</name>
+  <name xml:lang="vi">Dropbox</name>
+  <name xml:lang="zh_CN">Dropbox</name>
+  <name xml:lang="zh_TW">Dropbox</name>
+  <name>Dropbox</name>
+  <developer_name translate="no">Dropbox</developer_name>
+  <developer id="dropbox.com">
+    <name translate="no">Dropbox</name>
+  </developer>
+
+  <summary xml:lang="ar">الوصول إلى ملفاتك من أي كمبيوتر</summary>
+  <summary xml:lang="bn">যে কোন কম্পিউটার থেকে আপনার ফাইলসমূহে প্রবেশ করুন</summary>
+  <summary xml:lang="de">Von jedem Computer aus Zugriff auf die eigenen Dateien</summary>
+  <summary xml:lang="es">Accede a tus documentos desde cualquier computadora</summary>
+  <summary xml:lang="fr">Accédez à vos fichiers depuis n'importe quel ordinateur</summary>
+  <summary xml:lang="hi">किसी भी कम्प्यूटर से अपने फाइलों तक पहुंचें </summary>
+  <summary xml:lang="id">Mengakses berkas dari komputer mana saja</summary>
+  <summary xml:lang="pt_BR">Acesse seus arquivos à partir de qualquer computador</summary>
+  <summary xml:lang="ro">Acceseaza fisierele tale de pe orice computer</summary>
+  <summary xml:lang="th">เข้าถึงไฟล์ของคุณจากเครื่องไหนก็ได้</summary>
+  <summary xml:lang="vi">Truy cập các tệp từ bất kỳ máy tính nào</summary>
+  <summary xml:lang="zh_CN">从任何计算机访问您的文件</summary>
+  <summary xml:lang="zh_TW">從任何電腦存取您的檔案</summary>
+  <summary>Access your files from any computer</summary>
+
+  <description>
+    <p>Need to safely store all of your important documents, photos, songs, and files? Easy! With this app you can use the internet to save everything that’s important to you. You can then access those files from any computer that has an internet connection. Use this service to backup your files, share photos or collaborate on a project by sharing a Dropbox folder with whomever you’d like. Create a free account and start saving and sharing today!</p>
+    <p xml:lang="ar">أتحتاج إلى تخزين الوثائق المهمة الخاصة بك، الصور،الأغانى، والملفات بأمان؟ بسهولة! فبهذا التطبيق يُمكنك إستخدام الإنترنت لحفظ كُلّ ماهوهام بالنسبة لك. بالتالي يُمكنك الوصول إلى هذه الملفات من أي كمبيوتر به إتصال بالإنترنت. إستخدم هذة الخدمة لعمل نسخة إحتياطية للملفات الخاصة بك، قُم بمشاركة الصور أوتَعاون في مشروع عن طريق تبادل مجلد دروبوكس مع من تُريد. قٌم بإنشاء حساب مجاني وإبدأ فى الحفظ والمشاركة اليوم!</p>
+    <p xml:lang="bn">আপনার সকল গুরুত্বপূর্ণ নথিপত্র, ছবি, গান এবং ফাইলসমূহ নিরাপদে জমা করে রাখতে চান? পারবেন সহজে! এই এ্যাপের সাহায্যে আপনার সকল গুরুত্বপূর্ণ জিনিসপত্র ইন্টারনেটের মাধ্যমে জমা করে রাখতে পারবেন। তারপর আপনি সেসব ফাইলগুলোতে যে কোন কম্পিউটার থেকে প্রবেশ করতে পারবেন যদি সেখানে ইন্টারনেট সংযোগ থাকে। এই পরিসেবার মাধ্যমে আপনার ফাইল জমা করে রাখুন, ছবি ভাগাভাগি করুন অথবা যে কারো সাথে ড্রপবক্সের একটি ফোল্ডার ভাগাভাগি করে কোন প্রজেক্টে সাহায্য করুন। বিনামূল্যে একটি একাউন্ট তৈরি করুন এবং জমা আর ভাগাভাগি শুরু করুন আজই!</p>
+    <p xml:lang="de">Willst du deine wichtigen Dokumente, Fotos, Musik und andere Dateien sicher abspeichern? Das ist leicht! Mit diesem Programm kannst du über das Internet alles Speichern. Du kannst dann von jedem Computer mit Internet-Zugang auf diese Dateien zugreifen. Dieser Dienst erlaubt Dateien zu sichern, Fotos zu teilen und mit anderen an Projekten zu arbeiten. Mit einem kostenlosen Zugang kann sofort loslegen.</p>
+    <p xml:lang="es">¿Necesitas guardar de forma segura todos sus documentos, fotos, canciones y archivos importantes? ¡Fácil! Con este programa se puede utilizar el internet para guardar todo lo que más te importa. Una vez que hayas guardado todo, podrás acceder a tus archivos desde cualquier computadora que tenga conexión al internet. Usa este programa para guardar tus archivos, compartir fotos o colaborar en un proyecto con solo compartir una carpeta con quien deseas. ¡Crea una cuenta gratis y comienza a guardar y compartir hoy!</p>
+    <p xml:lang="fr">Vous avez besoin de stocker tous vos documents, photos, chansons et fichiers importants en sécurité ? Facile ! Avec cette app vous pouvez utiliser internet pour sauvegarder tout ce qui est important pour vous. Vous pouvez ensuite accéder à ces fichiers depuis n'importe quel ordinateur disposant d'une connexion internet. Utilisez ce service pour sauvegarder vos fichiers, partager vos photos ou collaborer sur un projet en partageant un dossier Dropbox avec qui vous voulez. Créez un compte gratuit et commencez à sauvegarder et à partager aujourd'hui !</p>
+    <p xml:lang="hi">क्या आपको अपने सभी महत्वपूर्ण दस्तावेजों, फ़ोटोज, गानों और फाइलों को सुरक्षित रूप से स्टोर करना है? यह बहुत ही आसान है! इस ऐप की मदद से आप उन सभी चीजों को सेव करने के लिए इंटरनेट का इस्तेमाल कर सकते हैं जो आपके लिए महत्वपूर्ण है। इसके बाद आप इंटरनेट युक्त किसी भी कम्प्यूटर की मदद से उन फाइलों तक पहुंच सकते हैं। अपने फाइलों का बैकअप लेने, फ़ोटोज शेयर करने या किसी के भी साथ ड्रॉपबॉक्स फोल्डर को शेयर करते हुए किसी प्रोजेक्ट पर मिलकर काम करने के लिए इस सेवा का इस्तेमाल करें। एक फ्री अकाउंट तैयार करें और आज ही सेव करना और शेयर करना आरंभ करें!</p>
+    <p xml:lang="id">Perlu menyimpan dengan aman seluruh dokumen, foto, lagu, dan berkas penting Anda? Mudah! Dengan aplikasi ini Anda dapat menggunakan internet untuk menyimpan segala hal yang penting bagi Anda. Selanjutnya, Anda dapat mengakses berkas-berkas itu dari komputer manapun yang memiliki sambungan internet. Gunakan layanan ini untuk membuat cadangan berkas-berkas Anda, berbagi foto, atau berkolaborasi dalam proyek dengan cara berbagi folder Dropbox bersama siapapun yang Anda inginkan. Buatlah akun gratis dan mulailah menyimpan dan berbagi hari ini juga!</p>
+    <p xml:lang="pt_BR">Precisa salvar com segurança todos os seus documentos importantes, fotos, músicas, e arquivos? Isso é fácil! Com esse aplicativo você pode utilizar a internet para salvar tudo o que for importante para você. Você poderá depois acessar todos os arquivos através de qualquer outro computador com internet. Use esse serviço para guardar seus arquivos, compartilhar fotos ou colaborar com algum projeto  ao compartilhar qualquer pasta dentro do Dropbox com quem você quiser. Faça seu registro gratuitamente e comece a salvar e compartilhar hoje!</p>
+    <p xml:lang="ro">Ai nevoie sa iti stochezi documente importante,imagini,muzica,si fisiere?Foarte simplu!Cu aceasta aplicatie poti folosi internetul pentru a salva tot ce este important pentru tine.Poti accesa aceste fisiere de pe orice computer care are conexiune la internet.Foloseste acest serviciu pentru a face o copie de rezerva a fisierelor,impartasi imagini sau colaboreaza cu un proiect doar impartasind un folder din Dropbox cu oricine vrei.Creeaza un cont gratuit si incepe sa salvezi si sa impartasesti chiar de azi!</p>
+    <p xml:lang="th">ต้องการที่จะเก็บเอกสารสำคัญ ภาพถ่าย เพลงและไฟล์ของคุณอย่างปลอดภัยหรือไม่ ง่ายๆ! ด้วยแอพนี้คุณสามารถใช้อินเทอร์เน็ตในการเก็บทุกอย่างที่สำคัญกับคุณ จากนั้นคุณสามารถเข้าถึงไฟล์จากคอมพิวเตอร์ เครื่องใดก็ได้ที่เชื่อมต่ออินเทอร์เน็ต ใช้บริการนี้เพื่อสำรองไฟล์ของคุณ แบ่งปันภาพถ่ายหรือทำงานร่วมกันในโครงการโดยการแชร์โฟลเดอร์ Dropbox กับคนที่คุณต้องการ สร้างบัญชีฟรีและเริ่มต้นการเก็บและแชร์มันได้เลยวันนี้!</p>
+    <p xml:lang="vi">Bạn cần lưu trữ an toàn tất cả các văn bản, hình ảnh, bài hát và các tập tin quan trọng? Dễ dàng thôi! Với ứng dụng này, bạn có thể sử dụng Internet để lưu tất cả mọi thứ quan trọng với bạn. Sau đó, bạn có thể truy cập các tệp này từ bất kỳ máy tính nào có kết nối internet. Sử dụng dịch vụ này để sao lưu các tập tin, chia sẻ hình ảnh hoặc cộng tác trên một dự án bằng cách chia sẻ thư mục Dropbox với bất cứ ai mà bạn muốn. Hãy tạo tài khoản miễn phí và bắt đầu lưu và chia sẻ ngày hôm nay!</p>
+    <p xml:lang="zh_CN">想要安全地存储所有重要文件、照片、音乐和文件吗？别急！只要有了这个app，您就可以使用互联网来保存所有重要文件。您还可以从任何有网络连接的计算机上访问这些文件。使用该服务来备份文档，通过共享一个Dropbox文件夹来共享照片，合作项目。创建一个免费账户，开始保存和分享您的每一天吧！.</p>
+    <p xml:lang="zh_TW">需要安全地儲存你的所有文件、照片、歌曲和檔案嗎？很簡單！使用這款應用程式，你可以使用網路來儲存所有你認為重要的東西。然後你可以從任何一台擁有網路連線的電腦上存取那些檔案。和你想要分享的人一起共享 Dropbox 資料夾，使用這個服務來備份檔案、分享照片或在同一個專案上進行合作。今天就建立免費帳號，並開始儲存和分享吧！</p>
+
+    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Dropbox, Inc.</p>
+    <p xml:lang="es">NOTA: Este paquete de instalación no es soportado ni verificado por la compañía Dropbox, Inc. Asimismo, tampoco tiene algún tipo de asociación con la misma.</p>
+  </description>
+
+  <releases>
+    <release version="193.4.5594" date="2024-02-19"/>
+    <release version="192.4.4605" date="2024-02-06"/>
+    <release version="191.4.4995" date="2024-01-23"/>
+    <release version="190.4.6383" date="2024-01-08"/>
+    <release version="189.4.8427" date="2024-01-04"/>
+    <release version="189.4.8395" date="2023-12-18"/>
+    <release version="188.4.6302" date="2023-12-04"/>
+    <release version="187.4.5691" date="2023-11-14"/>
+    <release version="186.4.6207" date="2023-10-31"/>
+    <release version="185.4.6054" date="2023-10-17"/>
+    <release version="182.4.6427" date="2023-09-05"/>
+    <release version="179.4.4985" date="2023-07-29"/>
+    <release version="179.4.4917" date="2023-07-24"/>
+    <release version="178.4.4811" date="2023-07-11"/>
+    <release version="177.4.5399" date="2023-06-24"/>
+    <release version="176.4.5108" date="2023-06-13"/>
+    <release version="175.4.5569" date="2023-05-29"/>
+    <release version="174.4.5852" date="2023-05-18"/>
+    <release version="173.4.6706" date="2023-05-02"/>
+    <release version="172.4.7555" date="2023-04-15"/>
+    <release version="171.4.6182" date="2023-04-04"/>
+    <release version="170.4.5895" date="2023-03-20"/>
+    <release version="169.4.5684" date="2023-03-04"/>
+    <release version="168.4.4802" date="2023-02-18"/>
+    <release version="167.4.4719" date="2023-02-07"/>
+    <release version="166.4.2920" date="2023-01-22"/>
+    <release version="165.4.4300" date="2023-01-12"/>
+    <release version="165.4.4286" date="2023-01-10"/>
+    <release version="164.4.7914" date="2022-12-24"/>
+    <release version="163.4.5456" date="2022-12-13"/>
+    <release version="162.4.5419" date="2022-11-24"/>
+    <release version="161.4.4923" date="2022-11-09"/>
+    <release version="160.4.4703" date="2022-10-28"/>
+    <release version="160.4.4696" date="2022-10-26"/>
+    <release version="160.4.4690" date="2022-10-26"/>
+    <release version="159.4.5870" date="2022-10-10"/>
+    <release version="158.4.4564" date="2022-09-26"/>
+    <release version="157.4.4808" date="2022-09-15"/>
+    <release version="157.4.4801" date="2022-09-14"/>
+    <release version="156.4.4908" date="2022-08-29"/>
+    <release version="155.4.5495" date="2022-08-14"/>
+    <release version="154.4.5363" date="2022-08-01"/>
+    <release version="153.4.3932" date="2022-07-17"/>
+    <release version="152.4.4880" date="2022-07-04"/>
+    <release version="151.4.4304" date="2022-06-22"/>
+    <release version="150.4.5000" date="2022-06-06"/>
+    <release version="149.4.4568" date="2022-05-21"/>
+    <release version="148.4.4519" date="2022-05-08"/>
+    <release version="147.4.4800" date="2022-04-23"/>
+    <release version="146.4.4836" date="2022-04-11"/>
+    <release version="145.4.4921" date="2022-03-27"/>
+    <release version="144.4.4491" date="2022-03-15"/>
+    <release version="143.4.4161" date="2022-02-26"/>
+    <release version="142.4.4197" date="2022-02-13"/>
+    <release version="141.4.3299" date="2022-02-02"/>
+    <release version="140.4.1951" date="2022-01-18"/>
+    <release version="139.4.4896" date="2022-01-01"/>
+    <release version="136.4.4345" date="2021-11-29"/>
+    <release version="135.4.4221" date="2021-11-11"/>
+    <release version="134.4.4115" date="2021-10-23"/>
+    <release version="133.4.4089" date="2021-10-09"/>
+    <release version="132.4.3800" date="2021-09-25"/>
+    <release version="131.4.3968" date="2021-09-13"/>
+    <release version="130.4.4978" date="2021-08-30"/>
+    <release version="129.4.3571" date="2021-08-14">
+      <description>
+        <p>New icon.</p>
+        <p>The desktop client is regularly updated with many improvements and fixes.</p>
+      </description>
+      <url>https://www.dropboxforum.com/t5/Dropbox-desktop-client-builds/Stable-Build-129-4-3571/td-p/539776</url>
+    </release>
+    <release version="128.4.2870" date="2021-08-05"/>
+    <release version="127.4.4265" date="2021-07-17"/>
+    <release version="126.4.4618" date="2021-07-03"/>
+    <release version="125.4.3474" date="2021-06-19"/>
+    <release version="124.4.4912" date="2021-06-09"/>
+    <release version="123.4.4832" date="2021-05-22"/>
+    <release version="122.4.4867" date="2021-05-11"/>
+    <release version="121.4.4267" date="2021-04-24"/>
+    <release version="120.4.4598" date="2021-04-12"/>
+    <release version="119.4.1772" date="2021-03-30"/>
+    <release version="118.4.460" date="2021-03-16"/>
+    <release version="116.4.368" date="2021-02-14"/>
+    <release version="115.4.601" date="2021-02-03"/>
+    <release version="113.4.507" date="2021-01-14"/>
+    <release version="112.4.321" date="2020-12-15"/>
+    <release version="111.4.472" date="2020-12-01"/>
+    <release version="110.4.458" date="2020-11-16"/>
+    <release version="109.4.517" date="2020-11-04"/>
+    <release version="108.4.453" date="2020-10-20"/>
+    <release version="107.4.443" date="2020-10-06"/>
+    <release version="106.4.368" date="2020-09-22"/>
+    <release version="105.4.651" date="2020-09-09"/>
+    <release version="104.4.175" date="2020-08-12"/>
+    <release version="102.4.431" date="2020-07-20"/>
+    <release version="101.4.434" date="2020-07-08"/>
+    <release version="100.4.409" date="2020-06-25"/>
+    <release version="99.4.501" date="2020-06-09"/>
+    <release version="98.4.158" date="2020-05-28"/>
+    <release version="97.4.467" date="2020-05-12"/>
+    <release version="96.4.172" date="2020-04-28"/>
+    <release version="95.4.441" date="2020-04-14"/>
+    <release version="94.4.384" date="2020-04-01"/>
+    <release version="93.4.273" date="2020-03-19"/>
+    <release version="92.4.382" date="2020-03-04"/>
+    <release version="91.4.548" date="2020-02-19"/>
+    <release version="91.3.541" date="2020-02-14"/>
+    <release version="90.4.307" date="2020-02-04"/>
+    <release version="89.4.278" date="2020-01-22"/>
+    <release version="88.4.172" date="2020-01-07"/>
+    <release version="88.3.167" date="2019-12-23"/>
+    <release version="87.4.138" date="2019-12-17"/>
+    <release version="87.3.125" date="2019-12-04"/>
+    <release version="85.4.155" date="2019-11-14"/>
+    <release version="84.4.170" date="2019-10-30"/>
+    <release version="83.4.152" date="2019-10-15"/>
+    <release version="82.4.155" date="2019-10-02"/>
+    <release version="82.3.133" date="2019-09-19"/>
+    <release version="80.4.126" date="2019-09-05"/>
+  </releases>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Dropbox login page</caption>
+      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/login-page.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A Dropbox folder displayed in a file manager</caption>
+      <image type="source">https://github.com/flathub/com.dropbox.Client/raw/master/screenshots/C/nautilus.png</image>
+    </screenshot>
+  </screenshots>
+
+  <custom>
+    <value key="GnomeSoftware::key-colors">[(20, 200, 235)]</value>
+  </custom>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="social-chat">moderate</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+
+  <url type="homepage">https://www.dropbox.com</url>
+
+  <launchable type="desktop-id">com.dropbox.Client.desktop</launchable>
+
+  <requires>
+    <internet>always</internet>
+  </requires>
+</component>

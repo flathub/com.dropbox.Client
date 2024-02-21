@@ -76,7 +76,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.dropbox.Client.appdata.xml"
+                    "path": "com.dropbox.Client.metainfo.xml"
                 },
                 {
                     "type": "file",
@@ -86,8 +86,8 @@
             "build-commands": [
                 "install -d /app/bin",
                 "install dropbox-app.py /app/bin/dropbox-app",
-                "install -d /app/share/appdata",
-                "install -m644 com.dropbox.Client.appdata.xml /app/share/appdata/com.dropbox.Client.appdata.xml",
+                "install -d /app/share/metainfo",
+                "install -m644 com.dropbox.Client.metainfo.xml /app/share/metainfo/com.dropbox.Client.metainfo.xml",
                 "install -d /app/share/applications",
                 "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop"
             ]
@@ -102,9 +102,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-192.4.4605.tar.gz",
-                    "sha256": "baba6e13f0a2c52aa167a8f5ddc992c31b9a1a7a64da88981e48d26f6f5722d5",
-                    "size": 115368740,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-193.4.5594.tar.gz",
+                    "sha256": "6bebc8f99c8cc98f3b44b4aaf58df26155471bea17a1caaf431134ee0ac77bf9",
+                    "size": 115422679,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
