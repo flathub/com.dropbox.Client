@@ -1,7 +1,7 @@
 {
     "app-id": "com.dropbox.Client",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox-app",
     "finish-args": [
