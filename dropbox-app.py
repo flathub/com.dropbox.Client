@@ -227,7 +227,7 @@ class DropboxLauncher():
             shutil.move(orig_dir, backup_dir)
 
         logging.info("Disabling auto-updates by making {} unwritable".format(orig_dir))
-        os.mkdir(orig_dir, mode=0)
+        os.mkdir(orig_dir, mode=0o400)
 
     def _launch_dropbox_daemon(self):
         logging.info("Running Dropbox's launcher at {}...".format(DROPBOX_LAUNCHER))
