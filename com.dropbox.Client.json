@@ -16,6 +16,7 @@
         "--own-name=org.kde.*"
     ],
     "modules": [
+        "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         {
             "name": "python3-psutil",
             "buildsystem": "simple",
