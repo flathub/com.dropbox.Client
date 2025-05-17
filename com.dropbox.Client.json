@@ -64,7 +64,8 @@
                 }
             ],
             "build-commands": [
-                "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 data/icons/hicolor/${icon_size}x${icon_size}/apps/dropbox.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
+                "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 data/icons/hicolor/${icon_size}x${icon_size}/apps/dropbox.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done",
+                "install -Dm0644 /app/share/icons/hicolor/64x64/apps/com.dropbox.Client.png /app/share/icons/dropboxstatus-logo.png"
             ]
         },
         {
