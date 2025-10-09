@@ -1,7 +1,7 @@
 {
     "app-id": "com.dropbox.Client",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox-app",
     "finish-args": [
@@ -23,8 +23,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-7.0.0.tar.gz",
-                    "sha256": "a3c736187215d1f94ebe18ee6b14202d1b89c165c2eaad159f55cdfb494f7a1c",
+                    "url": "https://github.com/giampaolo/psutil/archive/release-7.1.0.tar.gz",
+                    "sha256": "c359700138947e6c734af06110779f2d8234168e8fcba562ca1453be6af085c2",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 3978,
@@ -103,9 +103,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-232.4.5988.tar.gz",
-                    "sha256": "ef1ebbbb603eb5310fb30447b97463a9ed3d6dff496f58d8abf9054368f293b9",
-                    "size": 71051573,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-234.4.5591.tar.gz",
+                    "sha256": "96539eaa18917ca2dd347ef4892a28d1d981d03d8c4b6eaf687992c13f7a0e12",
+                    "size": 71497330,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
