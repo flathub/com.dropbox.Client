@@ -65,8 +65,11 @@
   </description>
 
   <releases>
-    <release version="234.4.5591" date="2025-10-07">
+    <release version="235.4.5905" date="2025-10-21">
       <description></description>
+    </release>
+    <release version="234.4.5591" date="2025-10-07">
+      <description/>
     </release>
     <release version="232.4.5988" date="2025-09-14">
       <description/>
