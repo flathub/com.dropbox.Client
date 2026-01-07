@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
-    "command": "dropbox-app",
+    "command": "dropbox",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -17,34 +17,6 @@
     ],
     "modules": [
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
-        {
-            "name": "python3-psutil",
-            "buildsystem": "simple",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/giampaolo/psutil/archive/release-7.2.1.tar.gz",
-                    "sha256": "221eca326a94fc0c6aff9cfe7b9e053b54bd72678f5006c6d930e8cb26f04b25",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 3978,
-                        "url-template": "https://github.com/giampaolo/psutil/archive/release-$version.tar.gz"
-                    }
-                }
-            ],
-            "build-commands": [
-                "python3 setup.py build",
-                "python3 setup.py install --single-version-externally-managed --root / --prefix /app"
-            ],
-            "cleanup": [
-                "tests",
-                "_psaix.*",
-                "_psbsd.*",
-                "_psosx.*",
-                "_pssunos.*",
-                "_pswindows.*"
-            ]
-        },
         {
             "//": "Just for the icons",
             "name": "nautilus-dropbox",
@@ -61,20 +33,27 @@
                         "tag-query": ".[0].name",
                         "version-query": "$tag | sub(\"^v\"; \"\")"
                     }
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "patches/nautilus-dropbox/0001-Ping-daemon-to-check-if-it-is-running.patch",
+                        "patches/nautilus-dropbox/0002-Patch-install-path-for-Flatpak.patch"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "path": "install-nautilus-dropbox.sh"
                 }
             ],
             "build-commands": [
-                "for icon_size in 16 22 24 32 48 64 256; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps; install -m644 data/icons/hicolor/${icon_size}x${icon_size}/apps/dropbox.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dropbox.Client.png; done"
+                "./install-nautilus-dropbox.sh"
             ]
         },
         {
             "name": "dropbox-app",
             "buildsystem": "simple",
             "sources": [
-                {
-                    "type": "file",
-                    "path": "dropbox-app.py"
-                },
                 {
                     "type": "file",
                     "path": "com.dropbox.Client.metainfo.xml"
@@ -85,8 +64,6 @@
                 }
             ],
             "build-commands": [
-                "install -d /app/bin",
-                "install dropbox-app.py /app/bin/dropbox-app",
                 "install -d /app/share/metainfo",
                 "install -m644 com.dropbox.Client.metainfo.xml /app/share/metainfo/com.dropbox.Client.metainfo.xml",
                 "install -d /app/share/applications",

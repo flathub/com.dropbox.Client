@@ -1,0 +1,26 @@
+From db425a5eb8e1980edd4b38e84f116600e1463ed5 Mon Sep 17 00:00:00 2001
+From: Will Thompson <wjt@endlessaccess.org>
+Date: Wed, 7 Jan 2026 10:40:34 +0000
+Subject: [PATCH 2/2] Patch install path for Flatpak
+
+The Flatpak installs the headless daemon to /app/extra/.dropbox-dist. Patch the launcher script accordingly.
+---
+ dropbox.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dropbox.in b/dropbox.in
+index 10f4d2c..019d624 100644
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -70,7 +70,7 @@ SIGNATURE_LOCATION_FMT = "https://www.dropbox.com/download?plat=%s&signature=1"
+ DOWNLOADING = "Downloading Dropbox... %d%%"
+ UNPACKING = "Unpacking Dropbox... %d%%"
+ 
+-PARENT_DIR = os.path.expanduser("~")
++PARENT_DIR = "/app/extra"
+ DROPBOX_DIST_PATH = "%s/.dropbox-dist" % PARENT_DIR
+ DROPBOXD_PATH = os.path.join(DROPBOX_DIST_PATH, "dropboxd")
+ DESKTOP_FILE = "@DESKTOP_FILE_DIR@/dropbox.desktop"
+-- 
+2.52.0
+
