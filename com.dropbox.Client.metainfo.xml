@@ -45,6 +45,8 @@
   <summary>Access your files from any computer</summary>
 
   <description>
+    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Dropbox, Inc.</p>
+    <p xml:lang="es">NOTA: Este paquete de instalación no es soportado ni verificado por la compañía Dropbox, Inc. Asimismo, tampoco tiene algún tipo de asociación con la misma.</p>   
     <p>Need to safely store all of your important documents, photos, songs, and files? Easy! With this app you can use the internet to save everything that’s important to you. You can then access those files from any computer that has an internet connection. Use this service to backup your files, share photos or collaborate on a project by sharing a Dropbox folder with whomever you’d like. Create a free account and start saving and sharing today!</p>
     <p xml:lang="ar">أتحتاج إلى تخزين الوثائق المهمة الخاصة بك، الصور،الأغانى، والملفات بأمان؟ بسهولة! فبهذا التطبيق يُمكنك إستخدام الإنترنت لحفظ كُلّ ماهوهام بالنسبة لك. بالتالي يُمكنك الوصول إلى هذه الملفات من أي كمبيوتر به إتصال بالإنترنت. إستخدم هذة الخدمة لعمل نسخة إحتياطية للملفات الخاصة بك، قُم بمشاركة الصور أوتَعاون في مشروع عن طريق تبادل مجلد دروبوكس مع من تُريد. قٌم بإنشاء حساب مجاني وإبدأ فى الحفظ والمشاركة اليوم!</p>
     <p xml:lang="bn">আপনার সকল গুরুত্বপূর্ণ নথিপত্র, ছবি, গান এবং ফাইলসমূহ নিরাপদে জমা করে রাখতে চান? পারবেন সহজে! এই এ্যাপের সাহায্যে আপনার সকল গুরুত্বপূর্ণ জিনিসপত্র ইন্টারনেটের মাধ্যমে জমা করে রাখতে পারবেন। তারপর আপনি সেসব ফাইলগুলোতে যে কোন কম্পিউটার থেকে প্রবেশ করতে পারবেন যদি সেখানে ইন্টারনেট সংযোগ থাকে। এই পরিসেবার মাধ্যমে আপনার ফাইল জমা করে রাখুন, ছবি ভাগাভাগি করুন অথবা যে কারো সাথে ড্রপবক্সের একটি ফোল্ডার ভাগাভাগি করে কোন প্রজেক্টে সাহায্য করুন। বিনামূল্যে একটি একাউন্ট তৈরি করুন এবং জমা আর ভাগাভাগি শুরু করুন আজই!</p>
@@ -59,9 +61,6 @@
     <p xml:lang="vi">Bạn cần lưu trữ an toàn tất cả các văn bản, hình ảnh, bài hát và các tập tin quan trọng? Dễ dàng thôi! Với ứng dụng này, bạn có thể sử dụng Internet để lưu tất cả mọi thứ quan trọng với bạn. Sau đó, bạn có thể truy cập các tệp này từ bất kỳ máy tính nào có kết nối internet. Sử dụng dịch vụ này để sao lưu các tập tin, chia sẻ hình ảnh hoặc cộng tác trên một dự án bằng cách chia sẻ thư mục Dropbox với bất cứ ai mà bạn muốn. Hãy tạo tài khoản miễn phí và bắt đầu lưu và chia sẻ ngày hôm nay!</p>
     <p xml:lang="zh_CN">想要安全地存储所有重要文件、照片、音乐和文件吗？别急！只要有了这个app，您就可以使用互联网来保存所有重要文件。您还可以从任何有网络连接的计算机上访问这些文件。使用该服务来备份文档，通过共享一个Dropbox文件夹来共享照片，合作项目。创建一个免费账户，开始保存和分享您的每一天吧！.</p>
     <p xml:lang="zh_TW">需要安全地儲存你的所有文件、照片、歌曲和檔案嗎？很簡單！使用這款應用程式，你可以使用網路來儲存所有你認為重要的東西。然後你可以從任何一台擁有網路連線的電腦上存取那些檔案。和你想要分享的人一起共享 Dropbox 資料夾，使用這個服務來備份檔案、分享照片或在同一個專案上進行合作。今天就建立免費帳號，並開始儲存和分享吧！</p>
-
-    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Dropbox, Inc.</p>
-    <p xml:lang="es">NOTA: Este paquete de instalación no es soportado ni verificado por la compañía Dropbox, Inc. Asimismo, tampoco tiene algún tipo de asociación con la misma.</p>
   </description>
 
   <releases>
