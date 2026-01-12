@@ -1,0 +1,49 @@
+From 990d32aab4845a9a196cb4309dc70975d3284c4e Mon Sep 17 00:00:00 2001
+From: Will Thompson <wjt@endlessaccess.org>
+Date: Wed, 7 Jan 2026 10:40:34 +0000
+Subject: [PATCH 1/2] Ping daemon to check if it is running
+
+If you run two separate instances of the same Flatpak app, they get different PID namespaces, so you cannot inspect the commandline of the pid stored in a file to check if the daemon is running.
+
+Instead, try to ping the daemon on the control socket. If it replies: it's running! If it doesn't reply: it's not!
+---
+ dropbox.in | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+diff --git a/dropbox.in b/dropbox.in
+index 85941a9..10f4d2c 100644
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -131,15 +131,21 @@ def plat():
+         FatalVisibleError("Platform not supported")
+ 
+ def is_dropbox_running():
+-    pidfile = os.path.expanduser("~/.dropbox/dropbox.pid")
+-
+     try:
+-        with open(pidfile, "r") as f:
+-            pid = int(f.read())
+-        with open("/proc/%d/cmdline" % pid, "r") as f:
+-            cmdline = f.read().lower()
+-    except:
+-        cmdline = ""
++        with closing(DropboxCommand()) as dc:
++            try:
++                dc.get_dropbox_status()
++                return True
++            except KeyError:
++                console_print("Couldn't get status: daemon isn't responding")
++            except DropboxCommand.CommandError as e:
++                console_print("Couldn't get status: " + str(e))
++            except DropboxCommand.BadConnectionError:
++                console_print("Dropbox isn't responding!")
++            except DropboxCommand.EOFError:
++                console_print("Dropbox daemon stopped.")
++    except DropboxCommand.CouldntConnectError:
++        return False
+ 
+     return "dropbox" in cmdline
+ 
+-- 
+2.52.0
+
