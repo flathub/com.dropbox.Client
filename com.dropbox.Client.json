@@ -38,7 +38,8 @@
                     "type": "patch",
                     "paths": [
                         "patches/nautilus-dropbox/0001-Ping-daemon-to-check-if-it-is-running.patch",
-                        "patches/nautilus-dropbox/0002-Patch-install-path-for-Flatpak.patch"
+                        "patches/nautilus-dropbox/0002-Patch-install-path-for-Flatpak.patch",
+                        "patches/nautilus-dropbox/0003-Resolve-symlinks-in-home-directory.patch"
                     ]
                 },
                 {

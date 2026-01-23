@@ -1,0 +1,33 @@
+From 393a363172b70d14ea0e5a584bc087d001db95d1 Mon Sep 17 00:00:00 2001
+From: Alex Reinking <alex.reinking@gmail.com>
+Date: Fri, 23 Jan 2026 14:14:04 -0500
+Subject: [PATCH] Resolve symlinks in home directory
+
+When launching the client, use os.path.realpath to resolve symbolic
+links in the user's home directory (whether from HOME or /etc/passwd).
+
+This avoids issues in Dropbox's file system support detection code.
+See https://github.com/flathub/com.dropbox.Client/issues/392 for
+more details.
+---
+ dropbox.in | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/dropbox.in b/dropbox.in
+index 019d624..8078a37 100644
+--- a/dropbox.in
++++ b/dropbox.in
+@@ -779,6 +779,10 @@ def start_dropbox():
+         if any(word in to_check for word in current_env):
+             new_env['XDG_CURRENT_DESKTOP'] = 'Unity'
+ 
++        # resolve symbolic links in the home path
++        # see: https://github.com/flathub/com.dropbox.Client/issues/392
++        new_env["HOME"] = os.path.realpath(os.path.expanduser("~"))
++
+         # we don't reap the child because we're gonna die anyway, let init do it
+         subprocess.Popen([DROPBOXD_PATH], preexec_fn=os.setsid, cwd=os.path.expanduser("~"),
+                              stderr=sys.stderr, stdout=f, close_fds=True, env=new_env)
+-- 
+2.52.0
+
