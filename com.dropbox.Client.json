@@ -18,15 +18,14 @@
     "modules": [
         "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
         {
-            "//": "Just for the icons",
             "name": "nautilus-dropbox",
             "buildsystem": "simple",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/dropbox/nautilus-dropbox.git",
-                    "commit": "7b9ff31208485e9e15fde2763b68da92ad23723d",
-                    "tag": "v2025.05.20",
+                    "commit": "669f65eda1bab36a233be387d2d9b3a12a221afb",
+                    "tag": "v2026.01.15",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
@@ -81,9 +80,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-238.4.6305.tar.gz",
-                    "sha256": "17720f71d28bb6366e6f7889b25412f3de0e3f342aad2b0bf4faff5a449459d2",
-                    "size": 71054175,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-241.4.4795.tar.gz",
+                    "sha256": "d006c331e4edc05fbb4651b2570f025ddb76ddc824e0f546663c1aae6f4f1649",
+                    "size": 71019369,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
