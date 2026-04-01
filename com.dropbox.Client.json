@@ -24,8 +24,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dropbox/nautilus-dropbox.git",
-                    "commit": "669f65eda1bab36a233be387d2d9b3a12a221afb",
-                    "tag": "v2026.01.15",
+                    "commit": "28e5ff69c9ed2c8213deef4f5bdde0bebbde4cd0",
+                    "tag": "v2026.03.20",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
@@ -80,9 +80,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-244.4.6580.tar.gz",
-                    "sha256": "6cc1301bb290a50768838772f4f727e3e018006cc6e07c9789201b8527c19db5",
-                    "size": 91592193,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-246.4.3513.tar.gz",
+                    "sha256": "cfbac5aeea4c71c3da4cec55264561976d76d8a04a7bbfd11a1f714fe379c0fd",
+                    "size": 91458293,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
