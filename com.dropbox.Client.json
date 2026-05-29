@@ -4,7 +4,9 @@
     "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "dropbox",
-    "tags": ["proprietary"],
+    "tags": [
+        "proprietary"
+    ],
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -25,8 +27,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dropbox/nautilus-dropbox.git",
-                    "commit": "28e5ff69c9ed2c8213deef4f5bdde0bebbde4cd0",
-                    "tag": "v2026.03.20",
+                    "commit": "288f5cd44711398b84e2a86fc782f053f5d548fa",
+                    "tag": "v2026.05.06",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
@@ -81,9 +83,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-250.4.3245.tar.gz",
-                    "sha256": "d5edeb5d3a38401282f95d84728a112caca2b88a0b510caf3f1627fabfc7bac1",
-                    "size": 90466725,
+                    "url": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-254.4.2518.tar.gz",
+                    "sha256": "e5f154cd12edea7e4208be2d3daf600db8bfd4c70074211079ffa6f5b050be8f",
+                    "size": 90309888,
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
