@@ -89,7 +89,7 @@
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "html",
-                        "url": "https://www.dropboxforum.com/t5/forums/filteredbylabelpage/board-id/101003016/label-name/stable%20build",
+                        "url": "https://community.dropbox.com/en/categories/dropbox-desktop-client-builds",
                         "version-pattern": "Stable Build (\\d+.\\d+.\\d+)",
                         "url-template": "https://clientupdates.dropboxstatic.com/dbx-releng/client/dropbox-lnx.x86_64-$version.tar.gz"
                     }
