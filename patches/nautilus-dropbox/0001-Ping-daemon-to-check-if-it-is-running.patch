@@ -1,4 +1,4 @@
-From 990d32aab4845a9a196cb4309dc70975d3284c4e Mon Sep 17 00:00:00 2001
+From 7d207fcf6e9af164fdffb0e5cd26105e2a567479 Mon Sep 17 00:00:00 2001
 From: Will Thompson <wjt@endlessaccess.org>
 Date: Wed, 7 Jan 2026 10:40:34 +0000
 Subject: [PATCH 1/2] Ping daemon to check if it is running
@@ -7,14 +7,14 @@ If you run two separate instances of the same Flatpak app, they get different PI
 
 Instead, try to ping the daemon on the control socket. If it replies: it's running! If it doesn't reply: it's not!
 ---
- dropbox.in | 22 ++++++++++++++--------
- 1 file changed, 14 insertions(+), 8 deletions(-)
+ dropbox.in | 29 +++++++++++++++++++----------
+ 1 file changed, 19 insertions(+), 10 deletions(-)
 
 diff --git a/dropbox.in b/dropbox.in
-index 85941a9..10f4d2c 100644
+index 2870a58..d26304b 100644
 --- a/dropbox.in
 +++ b/dropbox.in
-@@ -131,15 +131,21 @@ def plat():
+@@ -141,17 +141,26 @@ def plat():
          FatalVisibleError("Platform not supported")
  
  def is_dropbox_running():
@@ -27,6 +27,8 @@ index 85941a9..10f4d2c 100644
 -            cmdline = f.read().lower()
 -    except:
 -        cmdline = ""
+-
+-    return "dropbox" in cmdline
 +        with closing(DropboxCommand()) as dc:
 +            try:
 +                dc.get_dropbox_status()
@@ -41,9 +43,14 @@ index 85941a9..10f4d2c 100644
 +                console_print("Dropbox daemon stopped.")
 +    except DropboxCommand.CouldntConnectError:
 +        return False
++
++    # The daemon accepted our connection but did not give us a usable status.
++    # Treat that as not running: a half-started or wedged daemon is not one we
++    # can talk to, and the caller's only alternative is to keep waiting.
++    return False
  
-     return "dropbox" in cmdline
- 
+ @contextmanager
+ def gpg_context(keys):
 -- 
-2.52.0
+2.55.0
 
