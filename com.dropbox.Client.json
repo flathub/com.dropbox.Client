@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
-    "command": "dropbox",
+    "command": "dropbox-launcher",
     "tags": [
         "proprietary"
     ],
@@ -64,13 +64,18 @@
                 {
                     "type": "file",
                     "path": "com.dropbox.Client.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "dropbox-launcher.sh"
                 }
             ],
             "build-commands": [
                 "install -d /app/share/metainfo",
                 "install -m644 com.dropbox.Client.metainfo.xml /app/share/metainfo/com.dropbox.Client.metainfo.xml",
                 "install -d /app/share/applications",
-                "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop"
+                "install -m644 com.dropbox.Client.desktop /app/share/applications/com.dropbox.Client.desktop",
+                "install -D -m755 dropbox-launcher.sh /app/bin/dropbox-launcher"
             ]
         },
         {
