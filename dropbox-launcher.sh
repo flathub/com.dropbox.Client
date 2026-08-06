@@ -69,7 +69,7 @@ try_block_auto_updates() {
     if [ -e "$updated" ] && [ ! -w "$updated" ]; then
         return 0
     fi
-    if rm -rf "$updated" && mkdir -m 000 "$updated"; then
+    if rm -rf "$updated" && mkdir -m 400 "$updated"; then
         return 0
     fi
 
