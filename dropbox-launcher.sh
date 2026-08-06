@@ -37,8 +37,8 @@ DAEMON=/app/extra/.dropbox-dist/dropboxd
 
 # Subcommands other than `start` are CLI operations (status, filestatus, stop,
 # exclude, ...). Pass them straight through; they must not take the lock.
-# `start -i` is deliberately not honoured: /app is read-only, so the daemon
-# can never be downloaded at runtime, and the suggestion only misleads.
+# `start -i` is not honoured: we exec the daemon ourselves, so there is no
+# interactive download step to run.
 case "${1-start}" in
     start)
         ;;
@@ -66,6 +66,23 @@ esac
 
 cd "$HOME"
 
+# Dropbox self-updates into $HOME/.dropbox-dist; when that copy is newer, the
+# bundled dropboxd hands off to it and exits. flock waits on the process it
+# started, so that handoff releases the lock seconds into startup while Dropbox
+# keeps running, and the next launch is free to start a duplicate daemon against
+# the same instance database -- the tray icons of issue #395. Exec the newer
+# copy directly instead, leaving no handoff to lose the lock to.
+BUNDLED=/app/extra/.dropbox-dist
+UPDATED=$HOME/.dropbox-dist
+if [ -x "$UPDATED/dropboxd" ] && [ -r "$UPDATED/VERSION" ] && [ -r "$BUNDLED/VERSION" ]; then
+    bundled=$(cat "$BUNDLED/VERSION")
+    updated=$(cat "$UPDATED/VERSION")
+    newest=$(printf '%s\n%s\n' "$bundled" "$updated" | sort -V | tail -n 1)
+    if [ "$updated" != "$bundled" ] && [ "$newest" = "$updated" ]; then
+        DAEMON=$UPDATED/dropboxd
+    fi
+fi
+
 # Flatpak always sets XDG_RUNTIME_DIR, so this is purely defensive; but a
 # missing one must not stop Dropbox from starting.
 if [ -z "${XDG_RUNTIME_DIR-}" ]; then
@@ -74,5 +91,13 @@ if [ -z "${XDG_RUNTIME_DIR-}" ]; then
     exec "$DAEMON"
 fi
 
+# dropbox.pid holds a PID from the namespace of whichever instance wrote it, and
+# every `flatpak run` gets a fresh one, so a file left by an earlier instance can
+# name a live but unrelated process. dropboxd believes it and refuses to start --
+# "Another instance of Dropbox (<pid>) is running!" -- so clear it; dropboxd
+# writes a fresh one as it comes up. sh execs the daemon, so this costs no
+# process and --close still keeps the lock descriptor out of dropboxd.
+# shellcheck disable=SC2016  # $1/$2 are the inner sh's parameters, passed below.
 exec flock --nonblock --close --conflict-exit-code 0 \
-     "${XDG_RUNTIME_DIR}/dropbox-instance.lock" "$DAEMON"
+     "${XDG_RUNTIME_DIR}/dropbox-instance.lock" \
+     /bin/sh -c 'rm -f "$1"; exec "$2"' sh "${HOME}/.dropbox/dropbox.pid" "$DAEMON"
