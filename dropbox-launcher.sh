@@ -1,33 +1,20 @@
 #!/bin/sh
 # Single-instance launcher for the Dropbox Flatpak.
 #
-# Why this exists
-# ---------------
-# is_dropbox_running() decides whether a daemon is already running purely by
-# connecting to ~/.dropbox/command_socket. That is the only guard against
-# starting a second daemon, and it is not robust: if the socket is ever
-# orphaned -- the owning daemon killed abruptly, or a second daemon rebinding
-# and then unlinking it -- the check fails open.
-#
-# When it fails open the consequences are not subtle. A second daemon starts
-# against the same ~/.dropbox/instance1 database, and because the tray item's
-# object path is derived from the daemon's PID -- which is always the same low
-# number, since every `flatpak run` gets a fresh PID namespace -- both
-# instances register the identical
-# /org/ayatana/NotificationItem/dropbox_client_<pid>. The panel then shows two
-# tray icons that it cannot tell apart.
+# is_dropbox_running() guards against a second daemon purely by connecting to
+# ~/.dropbox/command_socket, which fails open whenever that socket is orphaned.
+# A second daemon then runs against the same ~/.dropbox/instance1 database, and
+# since the tray item's object path derives from the daemon's PID -- always the
+# same low number, as every `flatpak run` gets a fresh PID namespace -- both
+# register the identical /org/ayatana/NotificationItem/dropbox_client_<pid> and
+# the panel shows two icons it cannot tell apart.
 #
 # A flock is namespace-independent, so it holds where the socket and the pid
-# file do not. It lives in $XDG_RUNTIME_DIR, which Flatpak shares between all
-# instances of an app and backs with a tmpfs: locking is always available
-# there, and the lock cannot outlive the session.
-#
-# The lock is held by flock(1) itself, which forks, waits for the daemon, and
-# releases the lock when the daemon exits. --close means the descriptor is
-# closed in the child, so the daemon never sees it: it cannot clear the lock
-# with an fd sweep during daemonization, and it cannot leak the lock into a
-# helper process that outlives it. Nothing here depends on dropboxd's fd
-# hygiene.
+# file do not. $XDG_RUNTIME_DIR is shared between instances of an app and
+# tmpfs-backed, so locking always works there and the lock cannot outlive the
+# session. flock(1) holds the descriptor itself and waits on the daemon;
+# --close keeps it out of the daemon, which therefore cannot clear the lock
+# with an fd sweep or leak it into a helper that outlives it.
 #
 # See https://github.com/flathub/com.dropbox.Client/issues/395
 
@@ -35,10 +22,13 @@ set -eu
 
 DAEMON=/app/extra/.dropbox-dist/dropboxd
 
-# Subcommands other than `start` are CLI operations (status, filestatus, stop,
-# exclude, ...). Pass them straight through; they must not take the lock.
-# `start -i` is not honoured: we exec the daemon ourselves, so there is no
-# interactive download step to run.
+# Resolved before the cd below: we re-exec ourselves, and a relative $0 would
+# not resolve from $HOME.
+SELF=$(readlink -f "$0")
+
+# Subcommands other than `start` are CLI operations (status, stop, exclude,
+# ...) and must not take the lock. `start -i` is not honoured: we exec the
+# daemon ourselves, so there is no interactive download step to run.
 case "${1-start}" in
     start)
         ;;
@@ -47,13 +37,13 @@ case "${1-start}" in
         ;;
 esac
 
-# Reproduce the environment start_dropbox() sets up before spawning the
-# daemon, since we are starting it ourselves.
+# Reproduce the environment start_dropbox() sets up, since we start the daemon
+# ourselves.
 
-# Resolve symlinks in the home path; Dropbox's filesystem support detection
-# gets this wrong otherwise. See issue #392.
+# Dropbox's filesystem support detection gets this wrong otherwise (issue #392).
 HOME=$(readlink -f "$HOME")
 export HOME
+cd "$HOME"
 
 # Fix indicator icon and menu on Unity (LP: #1559249) and Budgie
 # (LP: #1683051) environments.
@@ -64,40 +54,90 @@ case ":${XDG_CURRENT_DESKTOP-}:" in
         ;;
 esac
 
-cd "$HOME"
+# Dropbox self-updates by unpacking a newer build into $HOME/.dropbox-dist and
+# handing off to it. We ship updates through Flathub, so block that: the
+# out-of-band build shares our ~/.dropbox instance database, and the handoff
+# also costs us the lock -- flock waits on the process it started, so the
+# bundled dropboxd exiting frees the lock seconds into startup while Dropbox
+# keeps running. An unwritable directory is enough; dropboxd carries on with
+# the build it was started from. dropbox-app.py did this until e82064c dropped
+# it along with the rest of the script.
+try_block_auto_updates() {
+    updated=$HOME/.dropbox-dist
 
-# Dropbox self-updates into $HOME/.dropbox-dist; when that copy is newer, the
-# bundled dropboxd hands off to it and exits. flock waits on the process it
-# started, so that handoff releases the lock seconds into startup while Dropbox
-# keeps running, and the next launch is free to start a duplicate daemon against
-# the same instance database -- the tray icons of issue #395. Exec the newer
-# copy directly instead, leaving no handoff to lose the lock to.
-BUNDLED=/app/extra/.dropbox-dist
-UPDATED=$HOME/.dropbox-dist
-if [ -x "$UPDATED/dropboxd" ] && [ -r "$UPDATED/VERSION" ] && [ -r "$BUNDLED/VERSION" ]; then
-    bundled=$(cat "$BUNDLED/VERSION")
-    updated=$(cat "$UPDATED/VERSION")
-    newest=$(printf '%s\n%s\n' "$bundled" "$updated" | sort -V | tail -n 1)
-    if [ "$updated" != "$bundled" ] && [ "$newest" = "$updated" ]; then
-        DAEMON=$UPDATED/dropboxd
+    # Already blocked by an earlier run.
+    if [ -e "$updated" ] && [ ! -w "$updated" ]; then
+        return 0
     fi
-fi
+    if rm -rf "$updated" && mkdir -m 000 "$updated"; then
+        return 0
+    fi
 
-# Flatpak always sets XDG_RUNTIME_DIR, so this is purely defensive; but a
-# missing one must not stop Dropbox from starting.
+    # A daemon on the wrong version beats no daemon, so carry on regardless.
+    echo "dropbox-launcher: could not make ${HOME}/.dropbox-dist unwritable;" \
+         "Dropbox may replace itself with an out-of-band build" >&2
+}
+
+# Safe only under the lock: a daemon answering the command socket from here is
+# one that escaped it, since a daemon we started would still hold it and we
+# would have exited at --conflict-exit-code 0. That escapee lives in the PID
+# namespace of a `flatpak run` that has since gone away, so signals cannot
+# reach it but the socket can. It also survives having $HOME/.dropbox-dist
+# deleted -- its code is an already-open zip -- and goes on working against the
+# shared instance database, so stopping it is the only way to get it off there.
+#
+# Only the current socket owner is reachable: a handoff chain can leave earlier
+# orphans that nothing here can see. Those die with the session.
+#
+# `dropbox running` inverts the usual convention: 1 when a daemon answered.
+stop_escaped_daemon() {
+    if /app/bin/dropbox running >/dev/null 2>&1; then
+        return 0
+    fi
+
+    echo "dropbox-launcher: stopping a daemon that escaped the instance lock" >&2
+    /app/bin/dropbox stop >/dev/null 2>&1 || :
+
+    # If it will not go, start anyway: refusing leaves the user with no daemon.
+    i=0
+    while [ "$i" -lt 50 ]; do
+        if /app/bin/dropbox running >/dev/null 2>&1; then
+            return 0
+        fi
+        sleep 0.1
+        i=$((i + 1))
+    done
+    echo "dropbox-launcher: it did not stop; starting anyway" >&2
+}
+
+# Flatpak always sets XDG_RUNTIME_DIR; a missing one must not stop Dropbox from
+# starting. Without the lock there is no way to tell an escapee from a healthy
+# daemon, so only the blocking half runs here.
 if [ -z "${XDG_RUNTIME_DIR-}" ]; then
     echo "dropbox-launcher: XDG_RUNTIME_DIR is unset;" \
          "starting without the single-instance guard" >&2
+    try_block_auto_updates
     exec "$DAEMON"
 fi
 
-# dropbox.pid holds a PID from the namespace of whichever instance wrote it, and
-# every `flatpak run` gets a fresh one, so a file left by an earlier instance can
-# name a live but unrelated process. dropboxd believes it and refuses to start --
-# "Another instance of Dropbox (<pid>) is running!" -- so clear it; dropboxd
-# writes a fresh one as it comes up. sh execs the daemon, so this costs no
-# process and --close still keeps the lock descriptor out of dropboxd.
-# shellcheck disable=SC2016  # $1/$2 are the inner sh's parameters, passed below.
-exec flock --nonblock --close --conflict-exit-code 0 \
-     "${XDG_RUNTIME_DIR}/dropbox-instance.lock" \
-     /bin/sh -c 'rm -f "$1"; exec "$2"' sh "${HOME}/.dropbox/dropbox.pid" "$DAEMON"
+# Re-enter under the lock so the cleanup below runs inside it; the final exec
+# still leaves no extra process behind.
+if [ -z "${DROPBOX_LAUNCHER_LOCKED-}" ]; then
+    DROPBOX_LAUNCHER_LOCKED=1
+    export DROPBOX_LAUNCHER_LOCKED
+    exec flock --nonblock --close --conflict-exit-code 0 \
+         "${XDG_RUNTIME_DIR}/dropbox-instance.lock" "$SELF" "$@"
+fi
+
+# Past here we hold the lock.
+stop_escaped_daemon
+try_block_auto_updates
+
+# dropbox.pid names a PID from the namespace of whichever instance wrote it, so
+# a file left by an earlier instance can name a live but unrelated process.
+# dropboxd believes it and refuses to start -- "Another instance of Dropbox
+# (<pid>) is running!" -- and the file persists across reboots, so a stale one
+# blocks every launch until cleared. dropboxd writes a fresh one as it starts.
+rm -f "${HOME}/.dropbox/dropbox.pid"
+
+exec "$DAEMON"
