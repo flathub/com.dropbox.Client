@@ -62,8 +62,11 @@
   </description>
 
   <releases>
-    <release version="275.4.3565" date="2026-10-13">
+    <release version="277.4.4974" date="2026-10-27">
       <description></description>
+    </release>
+    <release version="275.4.3565" date="2026-10-13">
+      <description/>
     </release>
     <release version="273.4.4708" date="2026-09-29">
       <description/>
